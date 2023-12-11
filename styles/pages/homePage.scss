@@ -1,0 +1,216 @@
+@use '../helpers/varibles' as *;
+@use '../helpers/global';
+@use '../layout/header';
+@use '../components/buttons';
+@use '../components/arrows-icons';
+@use '../helpers/animations';
+/* Start Landing */
+.landing {
+    height: 100vh;
+    background-image: url(../../imgs/banner-bg.png);
+    background-size: contain;
+    background-position: top right;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    @media (max-width: #{$mobile-size}) {
+        background-image: none;
+    }
+    &::before {
+        content: "";
+        width: 50%;
+        height: 8px;
+        background-color: #fe5b29;
+        position: absolute;
+        bottom: 0;
+        right: -10px;
+        transform: skew(-50deg);
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .rent {
+            margin: 40px 0;
+            width: 500px;
+            height: 380px;
+            position: relative;
+            overflow: hidden;
+            .box {
+                width: max-content;
+                position: absolute;
+                top: 0;
+                // left: -600px;
+                transform: translateX(-700px);
+                transition: #{$mainTransitionDuration};
+                transition: 1s;
+                &.dissapear-to-next {
+                    animation: 2.5s dissapear-to-next;
+                }
+                &.current-to-next {
+                    animation: 1s go-to-next 0.01s forwards;
+                }
+                &.dissapear-to-prev {
+                    animation: 2.5s dissapear-to-prev;
+                }
+                &.current-to-prev {
+                    animation: 1s go-to-prev 0.01s forwards;
+                }
+                h1 {
+                    font-size: 60px;
+                    color: #{$backgroundColor};
+                    span {
+                        color: #{$mainColor};
+                    }
+                }
+                p {
+                    width: 300px;
+                    margin-bottom: 40px;
+                    color: #403f3f;
+                    font-weight: 300;
+                    line-height: 1.3;
+                }
+            }
+            
+        }
+    }
+}
+/* End Landing */
+/* Start about */
+@import '../layout/aboute-section';
+/* End about */
+/* Start Search Car */
+.search-car {
+    background-color: #{$backgroundColor};
+    color: white;
+    padding: 40px 0;
+    @media (max-width: #{$tablet-size}) {
+        text-align: center;
+    }
+    h1 {
+        font-size: 40px;
+        margin: 0;
+        margin-bottom: 10px;
+    } 
+    p {
+        font-weight: 300;
+    }
+    form {
+        margin-top: 40px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        @media (max-width: #{$tablet-size}) {
+            flex-direction: column;
+            align-items: stretch;
+        }
+        .select {
+            position: relative;
+            .layer {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: transparent;
+                cursor: pointer;
+                @media (max-width: #{$tablet-size}) {
+                    height: calc(100% - 20px);
+                }
+            }
+            & > div {
+                min-width: 230px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: white;
+                padding: 12px;
+                color: #1a1a1a;
+                @media (max-width: #{$tablet-size}) {
+                    margin-bottom: 20px;
+                }
+                p {
+                    margin: 0;
+                }
+                .arrow-down {
+                    color: #999;
+                    transition: #{$mainTransitionDuration};
+                }
+            }
+            ul {
+                border-radius: 5px;
+                background-color: white;
+                transition: #{$mainTransitionDuration};
+                position: absolute;
+                opacity: 0;
+                top: 40px;
+                z-index: -1;
+                li {
+                    color: #363636;
+                    font-weight: 300;
+                    padding: 10px 30px 10px 20px;
+                    cursor: pointer;
+                    &.option-name {
+                        color: #999;
+                        font-weight: 400;
+                        background-color: #f6f6f6;
+                        border-radius: 5px;
+                        cursor: auto;
+                    }
+                    &.option-name.disabled {
+                        background-color: white;
+                        font-weight: 300;
+                    }
+                    &:not(.option-name):hover {
+                        background-color: #f6f6f6;
+                    }
+                    &.option-focus {
+                        font-weight: 400;
+                        color: black;
+                        background-color: #f6f6f6;
+                    }
+                }
+                
+            }
+            /* When Click On Select Box*/
+            &.select-active {
+                ul {
+                    opacity: 1;
+                    top: 48px;
+                    z-index: 10;
+                }
+                & > div {
+                    .arrow-down {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+        }
+        input[type="submit"] {
+            font-weight: 500;
+        }
+        
+
+    }
+}
+/* End Search Car */
+/* Start Vehicles Section */
+@import '../layout/vehicles-section';
+/* End Vehicles Section */
+/* Start Services */
+@import '../layout/services-section';
+/* End Services */
+/* Start Services */
+@import '../layout/clients-section';
+/* End Services */
+/* Start Contact */
+@import '../layout/Contact-section';
+/* End Contact */
+/* Start Footer */
+@import '../layout/footer';
+/* End Footer */
+
+
+
+
+

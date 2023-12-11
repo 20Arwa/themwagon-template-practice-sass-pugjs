@@ -1,0 +1,44 @@
+@use 'varibles' as *;
+@use 'mixins' as *;
+
+* {
+    @include prefixes(box-sizing,border-box, webkit moz)
+}
+body {
+    font-family: 'Cairo', sans-serif;
+    font-family: 'Roboto Slab', serif;
+    scroll-behavior: smooth;
+}
+ul {
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+a {
+    font-weight: 300;
+    color: inherit;
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+}
+.container {
+    padding: 0 15px;
+    margin: 0 auto;
+}
+@media (min-width: #{$mobile-size}) {
+    .container {
+        width: 750px
+    } 
+}
+@media (min-width: #{$tablet-size}) {
+    .container {
+        width: 970px
+    } 
+}
+@media (min-width: #{$desktop-size}) {
+    .container {
+        width: 1170px
+    } 
+}

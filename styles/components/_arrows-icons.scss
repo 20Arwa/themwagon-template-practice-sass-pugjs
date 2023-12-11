@@ -1,0 +1,17 @@
+@use '../helpers/varibles' as *;
+.main-arrow {
+    font-size: 60px;
+    cursor: pointer;
+    transition: #{$mainTransitionDuration};
+
+}
+.orang-arrow {
+    color: #{$mainColor};
+}
+.black-arrow {
+    color: #{$backgroundColor};
+}
+.orang-arrow.to-black:hover {
+    color: #{$backgroundColor}
+    
+}

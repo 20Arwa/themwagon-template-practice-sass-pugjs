@@ -1,0 +1,27 @@
+//- Searsh Car Section (Selectors)
+mixin selectSearshCar(optionName)
+    div.select
+        div.layer
+        div.main-button
+            p #{optionName}
+            <i class="fa-solid fa-chevron-down arrow-down"></i>
+        ul.options 
+            li.option-name #{optionName}
+            li Option 1
+            li Option 2
+            li Option 3
+//- Vehicles Section (cars and prices)
+mixin vehiclesCars(imgSrc)
+    .box    
+        div.img
+            img(src= imgSrc, alt="car")
+        h2 TOYOTA CAR
+        p Start per day $4500
+        input(class="main-button orang-button to-black" type="button", value="Book Now")
+
+//- Services Section Content
+mixin servicesBox(icon, title)
+    .box 
+        i(class = "" + icon)
+        h3 #{title}
+        p variations of passages of Lorem Ipsum available, but the majority have

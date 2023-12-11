@@ -1,0 +1,80 @@
+//- html head
+extends ../components/_html-head.pug
+
+include ../helpers/_mixins.pug
+    
+
+//- body Content
+block append content     
+    //Start header
+    include ../layout/_header.pug
+    //End header
+    // Start landing
+    .landing
+        .container 
+            .rent 
+                - var classRents = [".content1", ".content2", ".content3"]
+                each content, index in classRents 
+                    //- Give First One Class current
+                    - if (index == 0)
+                        div(class=content, class="box current-to-next")
+                            h1 Car Rent <span><br> For You</span>
+                            p #{content} There are many variations of passages of Lorem Ipsum available, but the majority
+                            .buttons 
+                                a(href="#")
+                                    input(class="main-button orang-button to-black" type="button", value="Read More")
+                                a(href="#")
+                                    input(class="main-button black-button" type="button", value="Contact Us")
+                    - else 
+                        //- Others
+                        div(class=content, class="box")
+                            h1 Car Rent <span><br> For You</span>
+                            p #{content} There are many variations of passages of Lorem Ipsum available, but the majority
+                            .buttons 
+                                a(href="#")
+                                    input(class="main-button orang-button to-black" type="button", value="Read More")
+                                a(href="#") 
+                                    input(class="main-button black-button" type="button", value="Contact Us")
+            .move-rents 
+                <i class="fa-solid fa-square-caret-left arrow-left main-arrow black-arrow"></i>
+                <i class="fa-solid fa-square-caret-right arrow-right main-arrow orang-arrow to-black"></i>
+    // End Landing
+    // Start About 
+    include ../layout/_about-section.pug 
+    // End About 
+    // Start Search Car
+    .search-car 
+        .container 
+            h1 Search Your Best Cars
+            p Using 'Content here, content here', making it look like readable
+            form(action="") 
+                //- Generate Select and Options
+                +selectSearshCar("Any Brand")
+                +selectSearshCar("Any Type")
+                +selectSearshCar("Price")
+                input(class="main-button orang-button to-white" type="submit", value="SEARCH NOW")
+    // End Search Car
+    // Start Vehicle
+    include ../layout/_vehicles-section.pug
+    // End Vehicle
+    // Start Services
+    include ../layout/_services-section.pug
+    // End Services
+    // Start Clients
+    include ../layout/_clients-section.pug
+    // End Clients
+    // Start Contact
+    include ../layout/_contact-section.pug
+    // End Contact
+    // Start Footer
+    include ../layout/_footer.pug
+    // End Footer
+    
+            
+
+
+block srcFiles
+    script(src="../../javascript/main.js")
+
+
+    

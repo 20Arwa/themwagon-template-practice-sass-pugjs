@@ -1,0 +1,101 @@
+@use "../helpers/varibles" as *;
+@use "../helpers/mixins" as *;
+@use "../helpers/animations";
+.clients {
+    padding-top: #{$sectionPadding};
+    padding-bottom: #{$sectionPadding};
+    text-align: center;
+    h1 {
+        font-size: 40px;
+        color: #292828;
+        margin-top: 0;
+        margin-bottom: 80px;
+    }
+    .contents-container {
+        width: 60%;
+        height: 75%;
+        margin: 0 auto;
+        overflow: hidden;
+        text-align: center;
+        position: relative;
+        @media(max-width: #{$mobile-size}) {
+            width: 100%;
+            height: calc(100% + 90px);
+        }
+        .content {    
+            margin: 30px 10px 0 10px;
+            position: absolute;
+            transition: 1s;
+            transform: translateX(-700px);
+            &.dissapear-to-next {
+                animation: 2.5s dissapear-to-next;
+            }
+            &.current-to-next {
+                animation: 1s go-to-next 0.01s forwards;
+            }
+            &.dissapear-to-prev {
+                animation: 2.5s dissapear-to-prev;
+            }
+            &.current-to-prev {
+                animation: 1s go-to-prev 0.01s forwards;
+            }
+            .person {
+                display: table-cell;
+                padding: 30px;
+                margin: auto 10px;
+                background-color: white;
+                position: relative;
+                @include prefixes(box-shadow, 0px 0px 6px 6px #f4f3f2, webkit moz);
+                @media(max-width: #{$mobile-size}) {
+                    display: block;
+                    &:last-of-type {
+                        margin-top: 60px;
+                    }
+                }
+                img {
+                    margin-top: -60px;
+                }
+                p {
+                    color: #292828;
+                    font-size: 16px;
+                    margin-bottom: 0;
+                }
+                .quote {
+                    position: absolute;
+                    bottom: -60px;
+                    font-size: 25px;
+                    color: #{$mainColor};
+                    @media(max-width: #{$mobile-size}) {
+                        display: none;
+                    }
+                }
+            }
+            
+        }
+    }
+    .arrows {
+        position: relative;
+        top: -260px;
+        @media(max-width: #{$mobile-size}) {
+            top: 0;
+        }
+        .arrow-left, .arrow-right {
+            position: absolute;
+            @media(max-width: #{$mobile-size}) {
+                font-size: 40px;
+                &.arrow-left {
+                    left: 35%;
+                }
+                &.arrow-right {
+                    right: 35%;
+                }
+            }
+        }
+        .arrow-left {
+            left: 50px;
+        }
+        .arrow-right {
+            right: 50px;
+        }
+    }
+}

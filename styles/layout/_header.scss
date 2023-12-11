@@ -1,0 +1,76 @@
+@use '../helpers/varibles' as *;
+
+header {
+    color: #{$FontColor};
+    nav {
+        padding: 20px 0;
+        background-color: #0e0c06;
+        height: 65px;
+        transition: #{$mainTransitionDuration};
+        @media (max-width: #{$tablet-size}) {
+            &.nav-list-display {
+                height: 400px;
+            }
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            .list-icon {
+                font-size: 35px;
+                cursor: pointer;
+                display: none;
+            }
+            @media (max-width: #{$tablet-size}) {
+                .list-icon {
+                    display: block;
+                }
+            }
+            .pages-links {
+                display: inline-flex;
+                @media (max-width: #{$tablet-size}) {
+                    text-align: center;
+                    flex-grow: 1;
+                    flex-basis: 100%;
+                    display: none;
+                    &.ul-list-display {
+                        display: block;
+                    }
+                }
+                li {
+                    font-size: 18px;
+                    margin: 0 0 0 40px;
+                    transition: #{$mainTransitionDuration};
+                    &:hover {
+                        color: #{$mainColor};
+                    }
+                    @media (max-width: #{$tablet-size}) {
+                        margin: 0 0 30px ;
+                        &:first-of-type {
+                            margin-top: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .header-contact {
+        background-color: #{$mainColor};
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            @media (max-width: #{$mobile-size}) {
+                flex-direction: column;
+            }
+            a {
+                display: flex;
+                align-items: center;
+                p {
+                    margin-left: 10px
+                }
+            }
+        }
+    }
+}

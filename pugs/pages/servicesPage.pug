@@ -1,0 +1,15 @@
+//- html head
+extends ../components/_html-head.pug
+
+
+block append content 
+    //- header
+    include  ../layout/_header.pug
+    //- about section
+    include ../layout/_services-section.pug
+    //- footer
+    include ../layout/_footer.pug
+
+//- javascript
+block srcFiles
+    script(src="../../javascript/main.js")

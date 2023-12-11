@@ -1,0 +1,38 @@
+.about {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: #{$sectionPadding};
+    padding-bottom: #{$sectionPadding};
+    @media (max-width: #{$tablet-size}) {
+        flex-direction: column-reverse;
+    }
+    img {
+        max-width: 45%;
+        @media (max-width: #{$tablet-size}) {
+            max-width: 75%;
+        }
+    }
+    .content {
+        margin: 0 0 0 40px;
+        @media (max-width: #{$tablet-size}) {
+            margin: 0 0 40px;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 0;
+            font-size: 35px;
+            color: #{$mainFontColor};
+            span {
+                color: #{$mainColor}
+            }
+        }
+        p {
+            margin: 30px 0;
+            font-size: 16px;
+            color: #{$textFontColor};
+            line-height: 1.6;
+        }
+    }
+
+}

@@ -1,0 +1,33 @@
+.clients.container
+    h1 WHAT SAYS CUSTOMERS
+    .contents-container
+        - var classPersons  = ["content1", "content2", "content3"]
+        each content, index in classPersons
+            //- Give First One Class current
+            - if (index == 0)
+                div(class= "content current-to-next", class=content)
+                    .person 
+                        img(src="../../imgs/client-img1.png", alt="client1")
+                        h2 Hannery
+                        p It is a long established fact that a reader will be distracted by the readable content of a page
+                        i(class="fa-solid fa-quote-left quote")
+                    .person 
+                        img(src="../../imgs/client-img2.png", alt="client2")
+                        h2 Channery
+                        p It is a long established fact that a reader will be distracted by the readable content of a page
+                        i(class="fa-solid fa-quote-left quote")
+            - else 
+                div(class= "content", class=content)
+                    .person 
+                        img(src="../../imgs/client-img1.png", alt="client1")
+                        h2 Hannery
+                        p It is a long established fact that a reader will be distracted by the readable content of a page
+                        i(class="fa-solid fa-quote-left quote")
+                    .person 
+                        img(src="../../imgs/client-img2.png", alt="client2")
+                        h2 Channery
+                        p It is a long established fact that a reader will be distracted by the readable content of a page
+                        i(class="fa-solid fa-quote-left quote")
+    .arrows 
+        <i class="fa-solid fa-square-caret-left arrow-left main-arrow orang-arrow to-black"></i>
+        <i class="fa-solid fa-square-caret-right arrow-right main-arrow orang-arrow to-black"></i>
